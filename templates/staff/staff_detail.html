@@ -1,0 +1,21 @@
+{% extends 'staff_base.html' %}
+
+{% block content %}
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center">
+            <button class="btn btn-secondary"><img src="{{ staff.profile_picture.url }}" height="100" width="100"/>
+            </button>
+            <span class="name mt-3">{{ staff.get_full_name }}</span> <span class="idd">@{{ user.username }}</span>
+            <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                <span><i class="fa fa-copy"></i></span></div>
+
+            <div class=" d-flex mt-2">
+                <a href="{% url 'staff:staff-update' staff.id %} " class="edit-profile btn btn-dark">Edit Profile</a>
+            </div>
+
+            <div class=" px-2 rounded mt-4 date "><span class="join">Joined {{ staff.date_joined | date:"d-m-Y"}}</span></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

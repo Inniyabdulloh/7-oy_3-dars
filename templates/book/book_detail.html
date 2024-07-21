@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-100">
+    <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <div class="card mb-30"><a class="card-img-tiles" href="#" data-abc="true">
+                <div class="inner">
+                  <div class="main-img"><img src="{{ book.cover_picture.url }}" alt="Category"></div>
+                </div></a>
+              <div class="card-body text-center">
+                <h4 class="card-title">{{ book.title }}</h4>
+                <p class="text-muted">{{ book.price }}</p>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+{% endblock %}
